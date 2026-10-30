@@ -13,9 +13,11 @@ This is a static website for GitHub Pages. It uses plain HTML and CSS, so it doe
 
 ## Add your content
 
-Replace the bracketed prompts and sample text with your own writing. Update “Your Name,” the email address, page titles, and any project details throughout the HTML files.
+Replace the bracketed prompts and sample text with your own writing. Update the sample email address and any project details throughout the HTML files.
 
 For the resume, add your PDF as `assets/files/resume.pdf`. The resume page uses that same file for its preview and download button.
+
+For the homepage portrait, add your photo as `assets/images/ajay-anne.jpg`.
 
 For the Discovery Project, replace the visual placeholder with at least one photo or visual that you took or created. Add a caption, complete the project details, and write at least 400 words across the project story. Address all five questions from your Discovery Project Showcase presentation.
 

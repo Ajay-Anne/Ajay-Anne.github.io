@@ -1,17 +1,18 @@
 :root {
   color-scheme: dark;
-  --navy: #a4d5ff;
-  --navy-dark: #d0e9ff;
-  --gold: #d6c27a;
-  --gold-light: #393522;
-  --ink: #edf1f4;
-  --muted: #bec8d1;
-  --paper: #111820;
-  --surface: #1b2630;
-  --border: #384550;
-  --button-bg: #005b8f;
-  --button-hover: #0872ab;
-  --button-text: #ffffff;
+  --navy: #55b7e8;
+  --navy-dark: #a7ddf7;
+  --gold: #ffc72c;
+  --gold-light: #5a481a;
+  --ink: #f3f7fa;
+  --muted: #c1d0dc;
+  --paper: #071b2e;
+  --surface: #0d2b45;
+  --surface-raised: #123b5c;
+  --border: #31516a;
+  --button-bg: #ffc72c;
+  --button-hover: #ffda70;
+  --button-text: #071b2e;
   --content-width: 70rem;
 }
 
@@ -74,7 +75,7 @@ a:focus-visible {
 
 .site-header {
   min-height: 5rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--gold);
 }
 
 .site-name {
@@ -118,9 +119,43 @@ main {
   border-bottom: 1px solid var(--border);
 }
 
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 17rem);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.hero-copy h1 {
+  max-width: 18ch;
+}
+
+.hero-portrait {
+  margin: 0;
+}
+
+.hero-portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 3px solid var(--gold);
+  border-radius: 0.35rem;
+  background: var(--surface-raised);
+  color: var(--ink);
+  object-fit: cover;
+  text-align: center;
+}
+
+.hero-portrait figcaption {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
 .eyebrow {
   margin: 0 0 0.8rem;
-  color: var(--navy);
+  color: var(--gold);
   font-size: 0.78rem;
   font-weight: 750;
   letter-spacing: 0.09em;
@@ -203,13 +238,15 @@ h3 {
 }
 
 .button-secondary {
-  color: var(--navy);
-  background: var(--paper);
+  color: var(--button-text);
+  background: var(--navy);
+  border-color: var(--navy);
 }
 
 .button-secondary:hover {
-  color: var(--navy-dark);
-  background: var(--gold-light);
+  color: var(--button-text);
+  background: var(--navy-dark);
+  border-color: var(--navy-dark);
 }
 
 .section-block {
@@ -234,7 +271,7 @@ h3 {
 .project-card {
   border: 1px solid var(--border);
   border-radius: 0.35rem;
-  background: var(--paper);
+  background: var(--surface);
 }
 
 .card {
@@ -279,7 +316,7 @@ h3 {
   margin-block: 2rem;
   padding: 1rem 1.2rem;
   border-left: 4px solid var(--gold);
-  background: var(--surface);
+  background: var(--gold-light);
   color: var(--ink);
 }
 
@@ -373,6 +410,7 @@ code {
 
 .project-feature {
   border-top: 4px solid var(--gold);
+  background: var(--surface-raised);
 }
 
 .project-card-copy .eyebrow {
@@ -389,9 +427,9 @@ code {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  border: 1px dashed #82909c;
+  border: 1px dashed var(--navy);
   border-radius: 0.25rem;
-  background: var(--surface);
+  background: var(--surface-raised);
   color: var(--muted);
   text-align: center;
 }
@@ -441,7 +479,7 @@ figcaption {
 
 .site-footer {
   min-height: 5rem;
-  border-top: 1px solid var(--border);
+  border-top: 2px solid var(--gold);
   color: var(--muted);
   font-size: 0.9rem;
 }
@@ -455,6 +493,14 @@ figcaption {
 }
 
 @media (max-width: 44rem) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-portrait {
+    width: min(100%, 17rem);
+  }
+
   .site-header {
     align-items: flex-start;
     flex-direction: column;
