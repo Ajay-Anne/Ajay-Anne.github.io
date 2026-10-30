@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="View or download the resume of Your Name.">
+    <title>Resume | Your Name</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="site-name" href="/">Your Name</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/resume.html" aria-current="page">Resume</a>
+        <a href="/goals.html">Career Goals</a>
+        <a href="/projects/">Projects</a>
+      </nav>
+    </header>
+
+    <main id="main" class="page-content">
+      <header class="page-heading">
+        <p class="eyebrow">Experience and skills</p>
+        <h1>Resume</h1>
+        <p class="lead">View the resume below or download a copy. Add your PDF to <code>assets/files/resume.pdf</code> to publish it here.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="/assets/files/resume.pdf" download>Download resume (PDF)</a>
+        </div>
+      </header>
+
+      <section class="resume-viewer" aria-label="Resume PDF">
+        <object data="/assets/files/resume.pdf" type="application/pdf" aria-label="Resume PDF preview">
+          <div class="resume-empty">
+            <h2>Add your resume PDF</h2>
+            <p>Save your PDF as <code>assets/files/resume.pdf</code> to show it here.</p>
+            <p><a href="/assets/files/resume.pdf">Open or download the resume PDF</a></p>
+          </div>
+        </object>
+      </section>
+      <p class="supporting-text">If the preview is unavailable in your browser, use the download button above to open the PDF.</p>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span>Your Name</span> · Georgia Tech</p>
+      <a href="mailto:your.email@example.com">your.email@example.com</a>
+    </footer>
+  </body>
+</html>
