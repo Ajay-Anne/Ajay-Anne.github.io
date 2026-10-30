@@ -3,7 +3,6 @@
   --navy: #55b7e8;
   --navy-dark: #a7ddf7;
   --gold: #ffc72c;
-  --gold-light: #5a481a;
   --ink: #f3f7fa;
   --muted: #c1d0dc;
   --paper: #071b2e;
@@ -123,7 +122,7 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(12rem, 17rem);
   align-items: center;
-  gap: clamp(2rem, 6vw, 5rem);
+  gap: clamp(1rem, 2.5vw, 2rem);
 }
 
 .hero-copy h1 {
@@ -138,7 +137,7 @@ main {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
-  border: 3px solid var(--gold);
+  border: 3px solid #041321;
   border-radius: 0.35rem;
   background: var(--surface-raised);
   color: var(--ink);
@@ -146,52 +145,17 @@ main {
   text-align: center;
 }
 
-.hero-portrait figcaption {
-  margin-top: 0.55rem;
-  color: var(--muted);
-  font-size: 0.82rem;
-  overflow-wrap: anywhere;
-}
-
-.eyebrow {
-  margin: 0 0 0.8rem;
-  color: var(--gold);
-  font-size: 0.78rem;
-  font-weight: 750;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
-h1,
-h2,
-h3,
 p {
   margin-top: 0;
 }
 
-h1,
-h2,
-h3 {
+h1 {
   color: var(--navy-dark);
   line-height: 1.2;
-}
-
-h1 {
   max-width: 18ch;
   margin-bottom: 1.1rem;
   font-size: clamp(2.4rem, 6vw, 4.25rem);
   letter-spacing: -0.045em;
-}
-
-h2 {
-  margin-bottom: 0.8rem;
-  font-size: clamp(1.45rem, 3vw, 2rem);
-  letter-spacing: -0.025em;
-}
-
-h3 {
-  margin-bottom: 0.55rem;
-  font-size: 1.2rem;
 }
 
 .lead {
@@ -200,18 +164,18 @@ h3 {
   font-size: clamp(1.1rem, 2vw, 1.28rem);
 }
 
-.placeholder {
-  text-decoration: underline;
-  text-decoration-color: var(--gold);
-  text-decoration-thickness: 0.14em;
-  text-underline-offset: 0.12em;
-}
-
-.button-row {
+.button-row,
+.home-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.6rem;
+}
+
+.home-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 34rem;
 }
 
 .button {
@@ -249,42 +213,14 @@ h3 {
   border-color: var(--navy-dark);
 }
 
-.section-block {
-  padding-block: clamp(3rem, 7vw, 5rem);
+.home-actions .button {
+  width: 100%;
 }
 
-.section-heading {
-  margin-bottom: 1.5rem;
-}
-
-.section-heading .eyebrow {
-  margin-bottom: 0.45rem;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.card,
-.project-card {
-  border: 1px solid var(--border);
-  border-radius: 0.35rem;
-  background: var(--surface);
-}
-
-.card {
-  padding: 1.35rem;
-}
-
-.card p,
-.project-card p {
-  color: var(--muted);
-}
-
-.text-link {
-  font-weight: 700;
+.home-actions .home-actions-linkedin {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc((100% - 0.75rem) / 2);
 }
 
 .page-content {
@@ -293,7 +229,7 @@ h3 {
 }
 
 .page-heading {
-  margin-bottom: 2.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .page-heading h1 {
@@ -304,25 +240,59 @@ h3 {
   max-width: 48rem;
 }
 
-.prose h2 {
-  margin-top: 2.25rem;
-}
-
 .prose p {
   color: var(--muted);
 }
 
-.callout {
-  margin-block: 2rem;
-  padding: 1rem 1.2rem;
-  border-left: 4px solid var(--gold);
-  background: var(--gold-light);
-  color: var(--ink);
+.about-section {
+  max-width: 62rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
 }
 
-.supporting-text {
+.about-section h2 {
+  margin-bottom: 0.75rem;
+  color: var(--navy-dark);
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+
+.about-section > p {
+  max-width: 48rem;
   color: var(--muted);
-  font-size: 0.92rem;
+}
+
+.about-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.about-photo-grid figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.about-photo-placeholder {
+  display: flex;
+  min-height: 10rem;
+  aspect-ratio: 4 / 3;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: 0.25rem;
+  background: var(--surface);
+  color: var(--muted);
+  text-align: center;
+}
+
+.about-photo-grid figcaption {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .resume-viewer {
@@ -361,66 +331,6 @@ code {
   font-size: 0.9em;
 }
 
-.roadmap {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: roadmap;
-}
-
-.roadmap li {
-  position: relative;
-  min-height: 10rem;
-  padding: 1.3rem;
-  border-top: 4px solid var(--gold);
-  background: var(--surface);
-  counter-increment: roadmap;
-}
-
-.roadmap li::before {
-  display: block;
-  margin-bottom: 0.7rem;
-  color: var(--muted);
-  content: "0" counter(roadmap);
-  font-size: 0.78rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-}
-
-.roadmap p {
-  margin-bottom: 0;
-  color: var(--muted);
-}
-
-.project-list {
-  display: grid;
-  gap: 1.25rem;
-}
-
-.project-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(14rem, 0.9fr);
-  gap: 1.5rem;
-  align-items: center;
-  padding: clamp(1.2rem, 3vw, 2rem);
-}
-
-.project-feature {
-  border-top: 4px solid var(--gold);
-  background: var(--surface-raised);
-}
-
-.project-card-copy .eyebrow {
-  margin-bottom: 0.45rem;
-}
-
-.project-card-copy h2 {
-  margin-bottom: 0.7rem;
-}
-
 .media-placeholder {
   display: flex;
   min-height: 13rem;
@@ -434,47 +344,12 @@ code {
   text-align: center;
 }
 
-.media-placeholder span {
-  max-width: 20rem;
-}
-
 .feature-visual {
   margin: 0 0 1.7rem;
 }
 
 .media-placeholder-large {
   min-height: clamp(15rem, 42vw, 28rem);
-}
-
-figcaption {
-  margin-top: 0.55rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.project-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.5rem;
-  padding-block: 1rem;
-  border-block: 1px solid var(--border);
-}
-
-.project-meta p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.project-story {
-  padding-top: 1rem;
-}
-
-.project-story section {
-  margin-top: 2rem;
-}
-
-.back-link {
-  margin-top: 3rem;
 }
 
 .site-footer {
@@ -516,19 +391,6 @@ figcaption {
 
   .site-nav a {
     font-size: 0.9rem;
-  }
-
-  .card-grid,
-  .roadmap {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card-copy {
-    order: 0;
   }
 
   .site-footer {

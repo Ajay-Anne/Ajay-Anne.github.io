@@ -7,7 +7,7 @@ This is a static website for GitHub Pages. It uses plain HTML and CSS, so it doe
 - `index.html` — welcome statement and site overview
 - `about.html` — biography
 - `resume.html` — embedded and downloadable resume
-- `goals.html` — career aspirations and roadmap
+- `goals.html` — career goals
 - `projects/index.html` — project portfolio
 - `projects/discovery-project.html` — Discovery Project feature
 
@@ -17,11 +17,13 @@ Replace the bracketed prompts and sample text with your own writing. Update the 
 
 For the resume, add your PDF as `assets/files/resume.pdf`. The resume page uses that same file for its preview and download button.
 
-For the homepage portrait, add your photo as `assets/images/ajay-anne.jpg`.
+The homepage portrait is loaded from `assets/css/ajay-anne.jpg`.
+
+The About page includes two photo placeholders each for Education, Scouting, Quiz Bowl, and Violin. Replace each placeholder `<div>` with an `<img>` using your image path and descriptive alt text; update its caption as needed.
 
 For the Discovery Project, replace the visual placeholder with at least one photo or visual that you took or created. Add a caption, complete the project details, and write at least 400 words across the project story. Address all five questions from your Discovery Project Showcase presentation.
 
-To add projects, duplicate a project card in `projects/index.html`, add a project page if needed, and link the card to it.
+To add projects, create a project page and link to it from `projects/index.html`.
 
 ## Publish
 
