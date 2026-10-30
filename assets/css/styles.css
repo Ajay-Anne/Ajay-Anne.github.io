@@ -1,14 +1,17 @@
 :root {
-  color-scheme: light;
-  --navy: #003057;
-  --navy-dark: #00213d;
-  --gold: #b3a369;
-  --gold-light: #eee9d9;
-  --ink: #202a33;
-  --muted: #53616d;
-  --paper: #ffffff;
-  --surface: #f4f6f8;
-  --border: #d7dee5;
+  color-scheme: dark;
+  --navy: #a4d5ff;
+  --navy-dark: #d0e9ff;
+  --gold: #d6c27a;
+  --gold-light: #393522;
+  --ink: #edf1f4;
+  --muted: #bec8d1;
+  --paper: #111820;
+  --surface: #1b2630;
+  --border: #384550;
+  --button-bg: #005b8f;
+  --button-hover: #0872ab;
+  --button-text: #ffffff;
   --content-width: 70rem;
 }
 
@@ -40,7 +43,7 @@ a:hover {
 }
 
 a:focus-visible {
-  outline: 3px solid var(--navy);
+  outline: 3px solid var(--gold);
   outline-offset: 4px;
 }
 
@@ -51,8 +54,8 @@ a:focus-visible {
   left: 0.75rem;
   padding: 0.55rem 0.8rem;
   transform: translateY(-160%);
-  color: var(--paper);
-  background: var(--navy);
+  color: var(--button-text);
+  background: var(--button-bg);
 }
 
 .skip-link:focus {
@@ -190,13 +193,13 @@ h3 {
 }
 
 .button-primary {
-  color: var(--paper);
-  background: var(--navy);
+  color: var(--button-text);
+  background: var(--button-bg);
 }
 
 .button-primary:hover {
-  color: var(--paper);
-  background: var(--navy-dark);
+  color: var(--button-text);
+  background: var(--button-hover);
 }
 
 .button-secondary {
