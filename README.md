@@ -23,7 +23,7 @@ The About page includes two photo placeholders each for Education, Scouting, Qui
 
 For the Discovery Project, replace the visual placeholder with at least one photo or visual that you took or created. Add a caption, complete the project details, and write at least 400 words across the project story. Address all five questions from your Discovery Project Showcase presentation.
 
-To add projects, create a project page and link to it from `projects/index.html`.
+The Projects page uses a clickable card with editable thumbnail, title, description, and month/year fields. Replace the Discovery Project card's thumbnail placeholder and bracketed text with your content. To add projects, duplicate the `<article>` card, update its details and link, and create its project page.
 
 ## Publish
 
