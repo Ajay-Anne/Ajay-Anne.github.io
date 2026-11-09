@@ -400,6 +400,20 @@ h1 {
   color: var(--muted);
 }
 
+.quiz-bowl-copy p {
+  color: var(--muted);
+}
+
+.tournament-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+}
+
+.tournament-list li + li {
+  margin-top: 0.3rem;
+}
+
 .about-photo-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
