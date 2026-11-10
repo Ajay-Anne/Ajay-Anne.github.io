@@ -390,7 +390,7 @@ h1 {
 
 .about-section-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(12rem, 17rem);
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 22rem);
   align-items: start;
   gap: 1.5rem;
 }
@@ -424,6 +424,14 @@ h1 {
   grid-template-columns: minmax(0, 1fr);
 }
 
+.quiz-bowl-photo-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.quiz-bowl-photo-grid img {
+  height: 17rem;
+}
+
 .about-photo-grid figure {
   min-width: 0;
   margin: 0;
@@ -445,7 +453,7 @@ h1 {
 .about-photo-grid img {
   display: block;
   width: 100%;
-  height: 9rem;
+  height: 13rem;
   object-fit: contain;
 }
 
@@ -568,11 +576,19 @@ code {
   }
 
   .about-photo-grid {
-    max-width: 15rem;
+    max-width: 22rem;
   }
 
   .about-photo-grid img {
-    height: 8rem;
+    height: 11rem;
+  }
+
+  .quiz-bowl-photo-grid {
+    max-width: 22rem;
+  }
+
+  .quiz-bowl-photo-grid img {
+    height: 15rem;
   }
 
   .hero-layout {
