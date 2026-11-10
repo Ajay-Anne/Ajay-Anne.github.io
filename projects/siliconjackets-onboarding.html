@@ -7,7 +7,7 @@
     <meta name="robots" content="noarchive">
     <meta name="theme-color" content="#071b2e">
     <title>SiliconJackets Onboarding Project | Ajay Anne</title>
-    <link rel="stylesheet" href="/assets/css/styles.css?v=202611101615">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=202611101700">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -30,58 +30,110 @@
       </header>
 
       <section class="technical-project-section" aria-labelledby="oscillator-heading">
+        <p class="technical-project-description">My onboarding project involved designing a current starved voltage controlled ring oscillator operating at 500 MHz. As part of the project, I performed calculations to determine transistor sizing and input voltage, identifying load capacitances and current. This topology involves 3 inverters that are current starved with a current mirror. The input voltage controls the mirror's bias and thus changes the operating frequency. I also learned how to use Cadence Virtuoso to design schematics, simulate those schematics, and then create layouts. This project used the SKY130 PDK and rail voltages of 1.8 V for VDD and 0 V for GND. DRC and LVS checks passed for all layouts.</p>
         <h2 id="oscillator-heading">Oscillator</h2>
         <div class="technical-project-gallery technical-project-gallery-pair">
           <figure>
-            <img src="/assets/css/OscillatorSchematic.png" alt="Schematic of the voltage-controlled ring oscillator" loading="lazy" decoding="async">
+            <img src="/assets/css/OscillatorSchematic.png" alt="Oscillator schematic in Cadence Virtuoso" loading="lazy" decoding="async">
             <figcaption>Oscillator schematic in Cadence Virtuoso</figcaption>
           </figure>
           <figure>
-            <img src="/assets/css/OscillatorLayout.png" alt="Layout of the voltage-controlled ring oscillator" loading="lazy" decoding="async">
+            <img src="/assets/css/OscillatorLayout.png" alt="Oscillator layout in Cadence Virtuoso" loading="lazy" decoding="async">
             <figcaption>Oscillator layout in Cadence Virtuoso</figcaption>
           </figure>
         </div>
       </section>
 
       <section class="technical-project-section" aria-labelledby="buffer-heading">
+        <p class="technical-project-description">Above is the schematic and layout of the oscillator. During the process, I had to adjust sizings significantly from my calculations to adjust the waveforms and ensure the target frequency was met.</p>
         <h2 id="buffer-heading">Buffer</h2>
         <div class="technical-project-gallery technical-project-gallery-pair">
           <figure>
-            <img src="/assets/css/BufferSchematic.png" alt="Schematic of the six-stage buffer" loading="lazy" decoding="async">
+            <img src="/assets/css/BufferSchematic.png" alt="Buffer schematic in Cadence Virtuoso" loading="lazy" decoding="async">
             <figcaption>Buffer schematic in Cadence Virtuoso</figcaption>
           </figure>
           <figure>
-            <img src="/assets/css/BufferLayout.png" alt="Layout of the six-stage buffer" loading="lazy" decoding="async">
+            <img src="/assets/css/BufferLayout.png" alt="Buffer layout in Cadence Virtuoso" loading="lazy" decoding="async">
             <figcaption>Buffer layout in Cadence Virtuoso</figcaption>
           </figure>
         </div>
       </section>
 
       <section class="technical-project-section" aria-labelledby="testbench-heading">
+        <p class="technical-project-description">The above buffer boosts the waveforms of the oscillator, ensuring they reach both rail voltages and fit the desired square wave shape. This buffer is 6 stages, using progessively larger inverters. To combat issues with my duty cycle, I did not scale up the buffer inverter sizings consistently. During the layout, I learned how to handle large transistors using multiple fingers.</p>
         <h2 id="testbench-heading">Testbench and Waveform</h2>
         <div class="technical-project-gallery technical-project-gallery-pair">
           <figure>
-            <img src="/assets/css/TestBenchSchematic.png" alt="Testbench schematic for the oscillator and buffer" loading="lazy" decoding="async">
+            <img src="/assets/css/TestBenchSchematic.png" alt="Schematic of testbench I used to simulate my design's performance." loading="lazy" decoding="async">
             <figcaption>Schematic of testbench I used to simulate my design's performance.</figcaption>
           </figure>
           <figure>
-            <img src="/assets/css/OscillationCurves.png" alt="Oscillator transient response waveform" loading="lazy" decoding="async">
+            <img src="/assets/css/OscillationCurves.png" alt="Oscillator waveform shape over time." loading="lazy" decoding="async">
             <figcaption>Oscillator waveform shape over time.</figcaption>
           </figure>
         </div>
       </section>
 
       <section class="technical-project-section" aria-labelledby="graphs-heading">
+        <p class="technical-project-description">This testbench was used to run simulations on my oscillator. In this testbench, the oscillator and buffer drive a 1 pF capacitor. The oscillation is slightly asymmetric with inconsistent rise and fall times which is undesirable.</p>
         <h2 id="graphs-heading">Temperature and Power Graphs</h2>
         <div class="technical-project-gallery technical-project-gallery-pair">
           <figure>
-            <img src="/assets/css/VCOFreqvsTemp.png" alt="Voltage-controlled oscillator frequency versus temperature graph" loading="lazy" decoding="async">
+            <img src="/assets/css/VCOFreqvsTemp.png" alt="Oscillator Frequency vs. Temperature. This shows that I was able to keep the oscillation frequency within 10% of target from 0-70 °C." loading="lazy" decoding="async">
             <figcaption>Oscillator Frequency vs. Temperature. This shows that I was able to keep the oscillation frequency within 10% of target from 0-70 °C.</figcaption>
           </figure>
           <figure>
-            <img src="/assets/css/OscillatorPowerConsumption.png" alt="Oscillator power consumption simulation graph" loading="lazy" decoding="async">
+            <img src="/assets/css/OscillatorPowerConsumption.png" alt="The oscillator's peak power usage was 15.260 μW." loading="lazy" decoding="async">
             <figcaption>The oscillator's peak power usage was 15.260 μW.</figcaption>
           </figure>
+        </div>
+      </section>
+
+      <section class="technical-project-section" aria-labelledby="specs-heading">
+        <h2 id="specs-heading">Specs</h2>
+        <div class="specs-table-wrapper">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th scope="col">Specification</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Oscillation frequency at T = 23 °C</th>
+                <td>500.906 MHz</td>
+              </tr>
+              <tr>
+                <th scope="row">Oscillation frequency from T = 0 °C to T = 70 °C</th>
+                <td>500 MHz ± 10%</td>
+              </tr>
+              <tr>
+                <th scope="row">Input Voltage</th>
+                <td>0.62 V</td>
+              </tr>
+              <tr>
+                <th scope="row">VDD</th>
+                <td>1.8 V</td>
+              </tr>
+              <tr>
+                <th scope="row">Rise time</th>
+                <td>170 ps</td>
+              </tr>
+              <tr>
+                <th scope="row">Fall time</th>
+                <td>70 ps</td>
+              </tr>
+              <tr>
+                <th scope="row">Peak power usage</th>
+                <td>15.260 μW</td>
+              </tr>
+              <tr>
+                <th scope="row">Duty cycle</th>
+                <td>51.333%</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -89,8 +141,8 @@
         <h2 id="full-layout-heading">Full Layout</h2>
         <div class="technical-project-gallery">
           <figure>
-            <img src="/assets/css/Layout.png" alt="Full layout of the 3-stage voltage-controlled oscillator and 6-stage buffer" loading="lazy" decoding="async">
-            <figcaption>Side-by-side oscillator and buffer layout</figcaption>
+            <img src="/assets/css/Layout.png" alt="Side-by-side oscillator and buffer layout" loading="lazy" decoding="async">
+            <figcaption>Side-by-side oscillator and buffer layout. DRC and LVS Checks passed.</figcaption>
           </figure>
         </div>
       </section>

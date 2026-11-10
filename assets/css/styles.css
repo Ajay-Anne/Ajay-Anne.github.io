@@ -564,6 +564,35 @@ code {
   color: var(--muted);
 }
 
+.specs-table-wrapper {
+  overflow-x: auto;
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.specs-table thead th {
+  color: var(--gold);
+}
+
+.specs-table tbody th {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.specs-table tbody td {
+  color: var(--muted);
+}
+
 .media-placeholder-large {
   min-height: clamp(15rem, 42vw, 28rem);
 }
