@@ -7,7 +7,9 @@
     <meta name="robots" content="noarchive">
     <meta name="theme-color" content="#071b2e">
     <title>Discovery Project | Ajay Anne</title>
-    <link rel="stylesheet" href="/assets/css/styles.css?v=202611101705">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" integrity="sha384-wFjoQjtV1y5jVHbt0p35Ui8aV8GVpEZkyF99OXWqP/eNJDU93D3Ugxkoyh6Y2I4A" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha384-nUkTNLI8COlMCRJ0FHIdX76If83145OTCLUx4gQyfnO0gGeO/sD9czGEUBxtkcUv" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=202611151346">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -25,17 +27,175 @@
     <main id="main" class="page-content">
       <header class="page-heading">
         <h1>ECE 1100: Discovery Project</h1>
-        <p class="lead">Brief Project description</p>
+        <p class="lead">Monitor Distance Warning Light</p>
       </header>
 
-      <figure class="feature-visual">
-        <div class="media-placeholder media-placeholder-large" role="img" aria-label="Placeholder for an original photo or visual of the Discovery Project">
-          <span>Photos/videos will go here</span>
+      <section class="feature-visual" aria-label="Device perspectives">
+        <div class="discovery-view-gallery">
+          <figure>
+            <img src="/assets/css/monitorDistanceFrontView.JPG" alt="Front view" decoding="async">
+            <figcaption>Front view</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/css/monitorDistanceSideView.JPG" alt="Side view" loading="lazy" decoding="async">
+            <figcaption>Side view</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/css/monitorDistanceTopView.JPG" alt="Top view" loading="lazy" decoding="async">
+            <figcaption>Top view</figcaption>
+          </figure>
         </div>
-      </figure>
+      </section>
 
-      <section class="prose">
-        <p>In depth technical description of project including challenges, etc.</p>
+      <section class="discovery-section" aria-labelledby="overview-heading">
+        <div class="discovery-overview-layout">
+          <div class="prose">
+            <h2 id="overview-heading">Project Overview</h2>
+            <p>I often found that after long sessions of computer use, I would start leaning closer and closer to my monitor, increasing eye strain. So, I designed this device that uses a light to indicate if I am too close or too far away from my monitor. The device uses an RBG-LED as the warning light and an Ultrasonic Distance Sensor to determine my proximity to my monitor.</p>
+            <p>The RGB-LED is controlled by the PWM digital pins to adjust the brightness of the colors. I chose the color red as a warning that I am too close, and I chose purple to indicate that I am too far away from the monitor. This was my first Arduino project using an RGB-LED.</p>
+            <p>The Ultrasonic Distance Sensor uses a trigger signal from a digital pin on the Arduino to send out a sound wave. Then, when the pulse returns, the Arduino reads the signal off another digital pin. The time it takes for the pulse to return allows us to calculate the distance based on the speed of sound. I initially wanted to have distances greater less than 2 feet be too close and distances greater than 5 feet be too far, but it turns out these values weren't realistic after I built the design. I settled on less than 1.5 feet being too close and greater than 2.5 feet being too far away.</p>
+            <p>The design process involved first creating a schematic, then writing the code, and then assembling the device before tuning/troubleshooting it. I went back and revised the schematic pin connections as a layout different than the one initially designed was easier for the physical connections.</p>
+          </div>
+          <div class="discovery-parts-list" aria-labelledby="parts-list-heading">
+            <h2 id="parts-list-heading">Parts list</h2>
+            <div class="specs-table-wrapper">
+              <table class="specs-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Component</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Arduino UNO R4</th></tr>
+                  <tr><th scope="row">KY-016 Common Cathode RGB LED</th></tr>
+                  <tr><th scope="row">HC-SR04 Ultrasonic Distance Sensor</th></tr>
+                  <tr><th scope="row">3 × 220 Ω resistors</th></tr>
+                  <tr><th scope="row">5 V Battery</th></tr>
+                  <tr><th scope="row">USB-C Cable</th></tr>
+                  <tr><th scope="row">Jumper Cables</th></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="discovery-section discovery-video-section" aria-labelledby="showcase-video-heading">
+        <h2 id="showcase-video-heading">Showcase Video</h2>
+        <div class="discovery-video">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/ylOwyotx5i0?autoplay=0"
+            title="Monitor Distance Warning Light project video"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="discovery-section" aria-labelledby="schematic-heading">
+        <h2 id="schematic-heading">Schematic</h2>
+        <div class="discovery-schematic-layout">
+          <img src="/assets/css/monitorDistanceSchematic.png" alt="" loading="lazy" decoding="async">
+          <div class="prose">
+            <p>This is a simple schematic of the design I implemented with my Arduino and breadboard. I used an Arduino UNO R4 when building the project, but the pins used function the same as the Arduino UNO R3 listed on the schematic. The device was powered by a portable phone charger battery connected to the Arduino over USB-C, supplying 5 V.</p>
+            <p>In the future, I might design and order a PCB of this device based on the schematic. This would probably use a much simpler microcontroller as this project doesn't require the full capabilities of the Arduino. I would also consider using a different LED component as this RGB-LED does not mix the colors very well. </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="discovery-section" aria-labelledby="code-heading">
+        <h2 id="code-heading">Code</h2>
+        <pre class="discovery-code line-numbers language-cpp"><code class="language-cpp">//defining pins
+const int TRIG_PIN  = 7;
+const int ECHO_PIN  = 8;
+const int RED_PIN   = 11;
+const int GREEN_PIN = 10;
+const int BLUE_PIN  = 9;
+
+//defining distances (in cm) for too close and too far
+const float CLOSE_CM = 45.72;
+const float FAR_CM   = 76.22;
+
+//distance sensor parameters; avg every n samples for a more accurate result and to prevent flickering
+const int SAMPLES = 5;
+const unsigned long ECHO_TIMEOUT_US = 30000;
+
+//amount of blue to mix with the red to get that purplish color
+const int red_blue = 60;
+
+//declaring pins and setting initial color to off
+void setup() {
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+  pinMode(RED_PIN, OUTPUT);
+  pinMode(GREEN_PIN, OUTPUT);
+  pinMode(BLUE_PIN, OUTPUT);
+
+  digitalWrite(TRIG_PIN, LOW);
+  setColor(0, 0, 0);
+}
+
+//gets the distance and sets the color of the LED based on the distance
+void loop() {
+  float distanceCm = getDistanceCm();
+
+  if (distanceCm &lt; 0) {
+    setColor(255, 0, red_blue);
+  } else if (distanceCm &lt; CLOSE_CM) {
+    setColor(255, 0, 0);
+  } else if (distanceCm &lt;= FAR_CM) {
+    setColor(0, 0, 0);
+  } else {
+    setColor(255, red_blue, 0);
+  }
+}
+
+//sets color by writing analog signal to the PWM pins
+void setColor(int r, int g, int b) {
+  analogWrite(RED_PIN, r);
+  analogWrite(GREEN_PIN, g);
+  analogWrite(BLUE_PIN, b);
+}
+
+
+//calculate distance from sensor
+float readDistanceOnce() {
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+
+  unsigned long duration = pulseIn(ECHO_PIN, HIGH, ECHO_TIMEOUT_US);
+  if (duration == 0) {
+    return -1;
+  }
+
+  //get distance based on speed of time*sound/2 (sound travels to me and back to sensor)
+  return duration * 0.0343 / 2.0;
+}
+
+//averages over SAMPLES number of readings to get more consistent results and prevent light from repeatedly flickering
+float getDistanceCm() {
+  float sum = 0;
+  int count = 0;
+
+  for (int i = 0; i &lt; SAMPLES; i++) {
+    float d = readDistanceOnce();
+    if (d &gt; 0) {
+      sum += d;
+      count++;
+    }
+    delay(60);
+  }
+
+  if (count == 0) {
+    return -1;
+  }
+
+  return sum / count;
+}</code></pre>
       </section>
     </main>
 
@@ -44,5 +204,10 @@
       <p class="footer-attribution">The website's visual design was made with AI assistance and was heavily edited by me. All content, including text, images, layout choices, and more, was made by me and not AI generated.</p>
       <a href="mailto:ajay_anne@outlook.com">ajay_anne@outlook.com</a>
     </footer>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js" integrity="sha384-xAgN7OCsK5s0d3G18tqRYrxy8hWsPA14E26TMh7Mi9ZM09vaz4EA0DBTl+80F5yC" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-clike.min.js" integrity="sha384-7LHwxHIDSHTBleLmgDWZbC/IMJsfYfFVOihKhvsrxYW4j47YQcRwZja4ToFE3bA8" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-c.min.js" integrity="sha384-gaD4ncierlmWk42Z3BmTp37/z+Dqt8V4Wf74UjTvFeo+M+SgnEI6Ysd98pWhksQv" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-cpp.min.js" integrity="sha384-NiOrAquf32LSG3Vuig99LKS03EZPUuM8a51NOp+XXsqx08hUVo3wbNWALY7K/2J8" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha384-6QJu8apxMmB9TiPVWzYKF5pRgKcz7snO0/QU+MrWmgBLECQjoa6erxX2VQ5t41Jd" crossorigin="anonymous"></script>
   </body>
 </html>
