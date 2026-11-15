@@ -53,7 +53,7 @@
             <h2 id="overview-heading">Project Overview</h2>
             <p>I often found that after long sessions of computer use, I would start leaning closer and closer to my monitor, increasing eye strain. So, I designed this device that uses a light to indicate if I am too close or too far away from my monitor. The device uses an RBG-LED as the warning light and an Ultrasonic Distance Sensor to determine my proximity to my monitor.</p>
             <p>The RGB-LED is controlled by the PWM digital pins to adjust the brightness of the colors. I chose the color red as a warning that I am too close, and I chose purple to indicate that I am too far away from the monitor. This was my first Arduino project using an RGB-LED.</p>
-            <p>The Ultrasonic Distance Sensor uses a trigger signal from a digital pin on the Arduino to send out a sound wave. Then, when the pulse returns, the Arduino reads the signal off another digital pin. The time it takes for the pulse to return allows us to calculate the distance based on the speed of sound. I initially wanted to have distances greater less than 2 feet be too close and distances greater than 5 feet be too far, but it turns out these values weren't realistic after I built the design. I settled on less than 1.5 feet being too close and greater than 2.5 feet being too far away.</p>
+            <p>The Ultrasonic Distance Sensor uses a trigger signal from a digital pin on the Arduino to send out a sound wave. Then, when the pulse returns, the Arduino reads the signal off another digital pin. The time it takes for the pulse to return allows us to calculate the distance based on the speed of sound. I initially wanted to have distances greater less than 2 feet be too close and distances greater than 5 feet be too far, but it turns out these values weren't realistic after I built the design. I settled on less than 1.5 feet being too close and greater than 2.5 feet being too far away. I chose to average the readings over 5 samples to get more consistent results and prevent the light from flickering from the occasional bad reading.</p>
             <p>The design process involved first creating a schematic, then writing the code, and then assembling the device before tuning/troubleshooting it. I went back and revised the schematic pin connections as a layout different than the one initially designed was easier for the physical connections.</p>
           </div>
           <div class="discovery-parts-list" aria-labelledby="parts-list-heading">
@@ -69,7 +69,7 @@
                   <tr><th scope="row">Arduino UNO R4</th></tr>
                   <tr><th scope="row">KY-016 Common Cathode RGB LED</th></tr>
                   <tr><th scope="row">HC-SR04 Ultrasonic Distance Sensor</th></tr>
-                  <tr><th scope="row">3 × 220 Ω resistors</th></tr>
+                  <tr><th scope="row">3 x 220 Ω resistors</th></tr>
                   <tr><th scope="row">5 V Battery</th></tr>
                   <tr><th scope="row">USB-C Cable</th></tr>
                   <tr><th scope="row">Jumper Cables</th></tr>
@@ -99,7 +99,7 @@
           <img src="/assets/css/monitorDistanceSchematic.png" alt="" loading="lazy" decoding="async">
           <div class="prose">
             <p>This is a simple schematic of the design I implemented with my Arduino and breadboard. I used an Arduino UNO R4 when building the project, but the pins used function the same as the Arduino UNO R3 listed on the schematic. The device was powered by a portable phone charger battery connected to the Arduino over USB-C, supplying 5 V.</p>
-            <p>In the future, I might design and order a PCB of this device based on the schematic. This would probably use a much simpler microcontroller as this project doesn't require the full capabilities of the Arduino. I would also consider using a different LED component as this RGB-LED does not mix the colors very well. </p>
+            <p>In the future, I might design and order a PCB of this device based on the schematic. This would probably use a much simpler microcontroller as this project doesn't require the full capabilities of the Arduino. I would also consider using a different LED component as this RGB-LED does not mix the colors very well.</p>
           </div>
         </div>
       </section>
