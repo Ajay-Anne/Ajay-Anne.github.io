@@ -515,11 +515,7 @@ code {
   gap: 2rem;
 }
 
-.discovery-overview-layout .prose h2 {
-  margin-top: 0;
-}
-
-.discovery-parts-list h2 {
+.discovery-overview-layout h2 {
   margin-top: 0;
 }
 
@@ -657,10 +653,6 @@ code {
 
 .specs-table tbody td {
   color: var(--muted);
-}
-
-.media-placeholder-large {
-  min-height: clamp(15rem, 42vw, 28rem);
 }
 
 .site-footer {

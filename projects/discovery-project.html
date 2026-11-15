@@ -9,7 +9,7 @@
     <title>Discovery Project | Ajay Anne</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" integrity="sha384-wFjoQjtV1y5jVHbt0p35Ui8aV8GVpEZkyF99OXWqP/eNJDU93D3Ugxkoyh6Y2I4A" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha384-nUkTNLI8COlMCRJ0FHIdX76If83145OTCLUx4gQyfnO0gGeO/sD9czGEUBxtkcUv" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/styles.css?v=202611151346">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=202611151414">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -56,7 +56,7 @@
             <p>The Ultrasonic Distance Sensor uses a trigger signal from a digital pin on the Arduino to send out a sound wave. Then, when the pulse returns, the Arduino reads the signal off another digital pin. The time it takes for the pulse to return allows us to calculate the distance based on the speed of sound. I initially wanted to have distances greater less than 2 feet be too close and distances greater than 5 feet be too far, but it turns out these values weren't realistic after I built the design. I settled on less than 1.5 feet being too close and greater than 2.5 feet being too far away. I chose to average the readings over 5 samples to get more consistent results and prevent the light from flickering from the occasional bad reading.</p>
             <p>The design process involved first creating a schematic, then writing the code, and then assembling the device before tuning/troubleshooting it. I went back and revised the schematic pin connections as a layout different than the one initially designed was easier for the physical connections.</p>
           </div>
-          <div class="discovery-parts-list" aria-labelledby="parts-list-heading">
+          <div class="discovery-parts-list">
             <h2 id="parts-list-heading">Parts list</h2>
             <div class="specs-table-wrapper">
               <table class="specs-table">
@@ -66,13 +66,27 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><th scope="row">Arduino UNO R4</th></tr>
-                  <tr><th scope="row">KY-016 Common Cathode RGB LED</th></tr>
-                  <tr><th scope="row">HC-SR04 Ultrasonic Distance Sensor</th></tr>
-                  <tr><th scope="row">3 x 220 Ω resistors</th></tr>
-                  <tr><th scope="row">5 V Battery</th></tr>
-                  <tr><th scope="row">USB-C Cable</th></tr>
-                  <tr><th scope="row">Jumper Cables</th></tr>
+                  <tr>
+                    <th scope="row">Arduino UNO R4</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">KY-016 Common Cathode RGB LED</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">HC-SR04 Ultrasonic Distance Sensor</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">3 x 220 Ω resistors</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">5 V Battery</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">USB-C Cable</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">Jumper Cables</th>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -80,7 +94,7 @@
         </div>
       </section>
 
-      <section class="discovery-section discovery-video-section" aria-labelledby="showcase-video-heading">
+      <section class="discovery-section" aria-labelledby="showcase-video-heading">
         <h2 id="showcase-video-heading">Showcase Video</h2>
         <div class="discovery-video">
           <iframe
